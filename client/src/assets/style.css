@@ -1,0 +1,67 @@
+#login-layout {
+  background-color: lightgray;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#login-view {
+  flex: 1 0 auto;
+  padding-top: 30vh;
+}
+
+#user-layout,
+#admin-layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+@media screen and (min-width: 900px) {
+  #beer-recipe .tabs {
+    overflow: hidden;
+  }
+}
+
+.page-footer {
+  padding-top: 0;
+}
+
+.brand-logo {
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+.input-field {
+  margin-bottom: 0;
+}
+
+.row {
+  margin-bottom: 0;
+}
+
+button {
+  margin-left: 1rem;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+.mb1 {
+  margin-bottom: 1rem;
+}
+
+td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+td button {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}

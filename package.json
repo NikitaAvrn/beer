@@ -1,0 +1,36 @@
+{
+  "name": "beer.averyanov.xyz",
+  "version": "1.0.0",
+  "description": "Nodejs, Vue, SQLite3, Beer, beer.mel16bit.ru",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app.js",
+    "server": "nodemon app.js",
+    "client": "npm run serve --prefix client",
+    "client:install": "npm install --prefix client",
+    "client:build": "npm run build --prefix client",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "Nodejs",
+    "Vue",
+    "SQLite3",
+    "Beer",
+    "beer.mel16bit.ru"
+  ],
+  "author": "Averyanov Nikita <mel16bit@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "shortid": "^2.2.16",
+    "sqlite3": "^5.0.10"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.19"
+  }
+}

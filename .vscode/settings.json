@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "Beer",
+      "database": "${workspaceFolder:beer.averyanov.xyz}/beer.sqlite3"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}
