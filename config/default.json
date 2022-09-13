@@ -2,5 +2,5 @@
   "port": 5050,
   "database": "beer.sqlite3",
   "jwtSecret": "secret key",
-  "apiUrl": "http://192.168.31.51:5050/api"
+  "apiUrl": "http://localhost:5050/api"
 }
