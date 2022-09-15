@@ -1,8 +1,8 @@
 FROM node:16.17
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY /package.json /app
+COPY /package.json ./
 
 RUN npm install
 
@@ -14,6 +14,6 @@ RUN npm run client:build
 
 EXPOSE 3099
 
-VOLUME [ "/app/data" ]
+VOLUME [ "/usr/src/app/data" ]
 
 CMD [ "npm", "run", "start"  ]
