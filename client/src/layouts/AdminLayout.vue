@@ -7,7 +7,7 @@
     </ul>
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo black-text">beer.averyanov.xyz</a>
+        <a href="#" class="brand-logo black-text">beer.mel16bit.ru</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <router-link v-for="route in routes" :key="route.url" tag="li" :to="route.url" active-class="active"
             ><a href="#!" class="black-text">{{ route.title }}<i v-show="route.icon" :class="'right fa fa-' + route.icon"></i></a

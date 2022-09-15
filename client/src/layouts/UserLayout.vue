@@ -2,7 +2,7 @@
   <div id="user-layout">
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo black-text">&#127867; beer.averyanov.xyz</a>
+        <a href="#" class="brand-logo black-text">&#127867; beer.mel16bit.ru</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
             <router-link class="black-text" tag="a" to="/login">Авторизация<i class="fa fa-right-to-bracket right"></i></router-link>
