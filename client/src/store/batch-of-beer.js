@@ -20,7 +20,8 @@ export default {
       waterStart: '',
       waterWash: '',
       volume: '',
-      comment: ''
+      comment: '',
+      clarification: ''
     }),
     SET_BATCH: ((s, batch) => s.batch = batch),
     ADD_BATCH_LIST: ((s, batch) => {

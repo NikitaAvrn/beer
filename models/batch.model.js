@@ -19,9 +19,10 @@ class Batch {
         waterWash,
         volume,
         malt,
-        comment
+        comment,
+        clarification
       )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     `
     const insertedId = await this.sqlite.run(sql, [
       this.batch.recipe,
@@ -36,7 +37,8 @@ class Batch {
       this.batch.waterWash,
       this.batch.volume,
       this.batch.malt,
-      this.batch.comment
+      this.batch.comment,
+      this.batch.clarification
     ])
     return insertedId
   }
@@ -88,7 +90,8 @@ class Batch {
         waterWash = ?,
         volume = ?,
         malt = ?,
-        comment = ?
+        comment = ?,
+        clarification = ?
       WHERE batch.id = ?;
     `
     const updatedId = await this.sqlite.run(sql, [
@@ -105,6 +108,7 @@ class Batch {
       this.batch.volume,
       this.batch.malt,
       this.batch.comment,
+      this.batch.clarification,
       this.batch.id
     ])
     return updatedId

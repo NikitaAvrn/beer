@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-//import config from '../../../config/default.json'
-import config from '../../../config/production.json'
+import config from '../../../config/default.json'
+//import config from '../../../config/production.json'
 
 import list from './directory/list'
 import malt from './directory/malt'

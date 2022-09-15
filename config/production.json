@@ -1,6 +1,7 @@
 {
-  "port": 80,
+  "port": 3099,
   "database": "beer.sqlite3",
   "jwtSecret": "ajeQErBzK6kYqufFA9vSZ8V73X45hUty",
-  "apiUrl": "http://beer.mel16bit.ru/api"
+  "apiUrl": "http://beer.mel16bit.ru/api",
+  "baseUrl": "http://beer.mel16bit.ru"
 }

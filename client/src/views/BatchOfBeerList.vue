@@ -27,6 +27,7 @@ export default {
         b.dateBottlingTitle = Intl.DateTimeFormat('ru-RU').format(new Date(b.dateBottling))
         b.dateReadyTitle = Intl.DateTimeFormat('ru-RU').format(new Date(b.dateReady))
         b.commentTitle = b.comment.length > 50 ? b.comment.substring(0, 50) + '...' : b.comment
+        b.linkUser = `<a href="/b/${b.link}" target="_blank">${b.link}</a>`
         return b
       })
     },
@@ -38,8 +39,8 @@ export default {
       { title: 'Розлив', name: 'dateBottlingTitle' },
       { title: 'Готовность', name: 'dateReadyTitle' },
       { title: 'Объем (л.)', name: 'volume' },
-      { title: 'Отзывы', name: 'commentTitle' },
-      { title: 'Ссылка', name: 'link' },
+      /* { title: 'Отзывы', name: 'commentTitle' }, */
+      { title: 'Ссылка', name: 'linkUser', dataType: 'html' },
     ],
   }),
   methods: {

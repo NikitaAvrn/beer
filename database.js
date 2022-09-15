@@ -5,7 +5,7 @@ const DB_NAME = config.get('database')
 
 class SQLiteDB {
   constructor () {
-    this.db = new sqlite3.Database(DB_NAME, (err) => {
+    this.db = new sqlite3.Database(`data/${DB_NAME}`, (err) => {
       if (err) {
         console.log('При соединении к базе данных произошла ошибка.')
       } else {

@@ -64,6 +64,12 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
+              <input id="clarification" v-model="BATCH.clarification" type="text" />
+              <label for="clarification">Осветление</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
               <textarea id="comment" v-model="BATCH.comment" class="materialize-textarea"></textarea>
               <label for="comment">Дополнительная информация</label>
             </div>

@@ -27,7 +27,10 @@
         <tbody v-if="data && data.length">
           <tr v-for="(row, inx) in searchTable" :key="inx">
             <td>{{ inx + 1 }}</td>
-            <td v-for="col in headers" :key="col.name">{{ row[col.name] }}</td>
+            <td v-for="col in headers" :key="col.name">
+              <span v-if="col.dataType == 'html'" v-html="row[col.name]"></span>
+              <span v-else>{{ row[col.name] }}</span>
+            </td>
             <td class="valign-wrapper">
               <button
                 class="btn-small white black-text waves-effect"

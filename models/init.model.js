@@ -106,6 +106,7 @@ class Init {
         waterWash REAL,
         volume REAL,
         comment TEXT,
+        clarification TEXT,
         deleted BOOLEAN NOT NULL DEFAULT FALSE
       );
     `
