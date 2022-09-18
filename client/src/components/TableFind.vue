@@ -9,7 +9,7 @@
       <button class="btn-small mt1 right white black-text waves-effect" @click="addBtnClick"><i class="fa fa-plus left"></i>Добавить</button>
     </div>
     <div class="col s12" v-if="headers">
-      <table class="striped centered highlight">
+      <table class="striped centered highlight responsive-table">
         <thead>
           <tr>
             <th>#</th>

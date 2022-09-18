@@ -45,7 +45,7 @@ export default {
     ...mapGetters(['AUTH']),
   },
   data: () => ({
-    email: '',
+    email: localStorage.getItem('loginEmail') || '',
     password: '',
   }),
   methods: {
@@ -56,9 +56,15 @@ export default {
         password: this.password,
       })
       if (this.AUTH) {
+        localStorage.setItem('loginEmail', this.email)
         this.$router.push('/batch-of-beer-list')
       }
     },
+  },
+  mounted() {
+    setTimeout(() => {
+      M.updateTextFields()
+    }, 0)
   },
   name: 'Login',
 }

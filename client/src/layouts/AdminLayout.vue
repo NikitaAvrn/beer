@@ -7,6 +7,7 @@
     </ul>
     <nav>
       <div class="nav-wrapper">
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fa fa-bars black-text"></i></a>
         <a href="#" class="brand-logo black-text">beer.mel16bit.ru</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <router-link v-for="route in routes" :key="route.url" tag="li" :to="route.url" active-class="active"
@@ -21,6 +22,21 @@
         </ul>
       </div>
     </nav>
+
+    <ul id="slide-out" class="sidenav" ref="sidenav">
+      <router-link v-for="route in routes" :key="route.url" tag="li" :to="route.url" active-class="active"
+        ><a href="#!" class="black-text">{{ route.title }}<i v-show="route.icon" :class="'left fa fa-' + route.icon"></i></a
+      ></router-link>
+      <li class="divider"></li>
+      <li><a class="subheader">Справочники</a></li>
+      <router-link v-for="route in directory" :key="route.url" :to="route.url" active-class="active" tag="li"
+        ><a href="#!" class="black-text"><i v-show="route.icon" :class="'left fa fa-' + route.icon"></i>{{ route.title }}</a></router-link
+      >
+      <li class="divider"></li>
+      <li>
+        <a href="#!" class="black-text" @click.prevent="logout"><i class="left fa fa-right-from-bracket"></i>Выход</a>
+      </li>
+    </ul>
 
     <main class="container">
       <router-view />
@@ -44,6 +60,10 @@ export default {
   beforeDestroy() {
     if (this.dropdown && this.dropdown.destroy) {
       this.dropdown.destroy()
+    }
+
+    if (this.sidenav && this.sidenav.destroy) {
+      this.sidenav.destroy()
     }
   },
   computed: {
@@ -91,6 +111,7 @@ export default {
       },
     ],
     dropdown: null,
+    sidenav: null,
   }),
   metaInfo: {
     title: 'Пивные рецепты [Панель администратора]',
@@ -107,6 +128,8 @@ export default {
     this.dropdown = M.Dropdown.init(this.$refs.directory, {
       constrainWidth: false,
     })
+
+    this.sidenav = M.Sidenav.init(this.$refs.sidenav, {})
 
     if (!(await this.checkAutorization())) {
       this.logout()
