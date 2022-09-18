@@ -18,7 +18,7 @@
     <footer class="page-footer">
       <div class="footer-copyright">
         <div class="container black-text">
-          © 2022 Averyanov.xyz
+          © 2022 beer.mel16bit.ru
           <a class="black-text right" :href="mailto"><i class="fa fa-envelope"></i> Написать автору</a>
         </div>
       </div>

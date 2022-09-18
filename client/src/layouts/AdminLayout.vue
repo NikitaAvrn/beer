@@ -29,7 +29,7 @@
     <footer class="page-footer">
       <div class="footer-copyright">
         <div class="container black-text">
-          © 2022 Averyanov.xyz
+          © 2022 beer.mel16bit.ru
           <a class="black-text right" v-if="AUTH" :href="mailto"><i class="fa fa-envelope"></i> {{ AUTH.name }}</a>
         </div>
       </div>
