@@ -2,14 +2,13 @@ FROM node:16.17
 
 WORKDIR /usr/src/app
 
-COPY /package.json ./
-
+COPY /package*.json ./
 RUN npm install
 
-#COPY /client/package.json /app/client
-COPY . .
-
+COPY /client/package*.json ./client/
 RUN npm run client:install
+
+COPY . .
 RUN npm run client:build
 
 EXPOSE 3099
