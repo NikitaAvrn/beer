@@ -187,7 +187,7 @@ class Recipe {
     const sql = `
       SELECT recipe.*, count(batch.id) as brewingBeer
       FROM recipe
-      INNER JOIN batch
+      LEFT JOIN batch
       ON batch.recipe=recipe.id AND NOT batch.deleted
       WHERE NOT recipe.deleted
       GROUP BY recipe.id;
