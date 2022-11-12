@@ -35,7 +35,7 @@ export default {
     maltRecipeForm: MaltRecipeForm,
     headers: [
       { title: 'Солод', name: 'maltTitle' },
-      { title: 'Вес', name: 'weight', foot: 'sum' },
+      { title: 'Вес (кг.)', name: 'weight', foot: 'sum' },
       { title: 'Цвет', name: 'color', foot: 'average' },
       { title: 'Экстрактивность', name: 'extractivity', foot: 'average' },
       { title: 'Внесение', name: 'entry' },

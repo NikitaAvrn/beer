@@ -185,10 +185,12 @@ class Recipe {
   
   async readAll() {
     const sql = `
-      SELECT recipe.*, count(batch.id) as brewingBeer
+      SELECT recipe.*, count(batch.id) as brewingBeer, count(review.id) as reviewCount
       FROM recipe
       LEFT JOIN batch
       ON batch.recipe=recipe.id AND NOT batch.deleted
+      LEFT JOIN review
+      ON batch.id=review.batch AND NOT batch.deleted
       WHERE NOT recipe.deleted
       GROUP BY recipe.id;
     `

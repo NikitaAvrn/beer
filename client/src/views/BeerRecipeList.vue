@@ -25,7 +25,7 @@ export default {
       { title: 'Объем этилового спирта (%)', name: 'abv' },
       { title: 'Горечь (IBU)', name: 'ibu' },
       { title: 'Варки', name: 'brewingBeer' },
-      { title: 'Отзывы', name: 'comment' },
+      { title: 'Отзывы', name: 'reviewCount' },
     ],
   }),
   methods: {

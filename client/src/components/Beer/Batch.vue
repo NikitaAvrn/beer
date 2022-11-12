@@ -6,6 +6,7 @@
         <p>
           Варка: {{ BATCH.dateStart | date }} <br />
           Брожение: {{ BATCH.dateFermentation | date }} <br />
+          <span v-show="BATCH.clarification">Осветление: {{ BATCH.clarification }} <br /></span>
           Карбонизация: {{ BATCH.dateCorbonization | date }} <br />
           Розлив: {{ BATCH.dateBottling | date }} <br />
           Готово: {{ BATCH.dateReady | date }} <br />

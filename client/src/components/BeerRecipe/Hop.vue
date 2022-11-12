@@ -35,10 +35,11 @@ export default {
     hopRecipeForm: HopRecipeForm,
     headers: [
       { title: 'Хмель', name: 'hopTitle' },
-      { title: 'Вес', name: 'weight', foot: 'sum' },
-      { title: 'Альфа', name: 'alpha', foot: 'average' },
+      { title: 'Вес (гр.)', name: 'weight', foot: 'sum' },
+      { title: 'Альфа (%)', name: 'alpha', foot: 'average' },
       { title: 'Тип', name: 'type' },
       { title: 'Внесение', name: 'entry' },
+      { title: 'Время (мин.)', name: 'time' },
       { title: '%', name: 'percent', foot: 'sum' },
     ],
   }),

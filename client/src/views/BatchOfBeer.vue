@@ -108,7 +108,7 @@ export default {
     tabs: null,
   }),
   methods: {
-    ...mapActions(['getBatchOfBeerById', 'postBatchOfBeer', 'putBatchOfBeer']),
+    ...mapActions(['getBatchOfBeerById', 'postBatchOfBeer', 'putBatchOfBeer', 'getReviewList']),
     ...mapMutations(['CLR_BATCH']),
     async saveBtnClick() {
       if (!this.validateForm()) {
@@ -129,11 +129,12 @@ export default {
     },
   },
   mixins: [validate],
-  mounted() {
+  async mounted() {
     this.tabs = M.Tabs.init(this.$refs.tabs, {})
 
     if (this.$route.params.id) {
-      this.getBatchOfBeerById(this.$route.params.id)
+      await this.getBatchOfBeerById(this.$route.params.id)
+      await this.getReviewList(this.BATCH.id)
     } else {
       this.CLR_BATCH()
     }

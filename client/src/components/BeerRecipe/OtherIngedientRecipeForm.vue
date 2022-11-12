@@ -4,7 +4,7 @@
       <autocomplete-other v-model="RECIPE_OTHER_INGREDIENT.other"></autocomplete-other>
       <div class="row">
         <div class="input-field col s12 m6">
-          <input :id="'weight' + _uid" v-model.number="RECIPE_OTHER_INGREDIENT.weight" step="0.01" type="number" class="validate" required />
+          <input :id="'weight' + _uid" v-model.number="RECIPE_OTHER_INGREDIENT.weight" step="0.001" type="number" class="validate" required />
           <label :for="'weight' + _uid">Вес (кг.)</label>
         </div>
       </div>

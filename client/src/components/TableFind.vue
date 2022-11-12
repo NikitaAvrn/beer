@@ -6,7 +6,9 @@
       <label for="search">Поиск</label>
     </div>
     <div class="col s6">
-      <button class="btn-small mt1 right white black-text waves-effect" @click="addBtnClick"><i class="fa fa-plus left"></i>Добавить</button>
+      <button class="btn-small mt1 right white black-text waves-effect" @click="addBtnClick">
+        <i class="fa fa-plus"></i><span class="hide-on-small-only ml1">Добавить</span>
+      </button>
     </div>
     <div class="col s12" v-if="headers">
       <table class="striped centered highlight responsive-table">

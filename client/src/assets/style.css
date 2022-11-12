@@ -7,7 +7,6 @@
 
 #login-view {
   flex: 1 0 auto;
-  padding-top: 30vh;
 }
 
 #user-layout,
@@ -54,6 +53,10 @@ button {
 
 .mb1 {
   margin-bottom: 1rem;
+}
+
+.ml1 {
+  margin-left: 1rem;
 }
 
 td {

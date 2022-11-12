@@ -41,8 +41,9 @@ export default {
     otherIngredientRecipeForm: OtherIngedientRecipeForm,
     headers: [
       { title: 'Ингридиенты', name: 'otherTitle' },
-      { title: 'Вес', name: 'weight', foot: 'sum' },
+      { title: 'Вес (кг.)', name: 'weight', foot: 'sum' },
       { title: 'Внесение', name: 'entry' },
+      { title: 'Время (мин.)', name: 'time' },
       { title: '%', name: 'percent', foot: 'sum' },
     ],
   }),

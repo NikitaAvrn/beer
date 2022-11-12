@@ -4,7 +4,7 @@
       <autocomplete-malt v-model="RECIPE_MALT.malt"></autocomplete-malt>
       <div class="row">
         <div class="input-field col s12 m6">
-          <input :id="'weight' + _uid" v-model.number="RECIPE_MALT.weight" step="0.01" type="number" class="validate" required />
+          <input :id="'weight' + _uid" v-model.number="RECIPE_MALT.weight" step="0.001" type="number" class="validate" required />
           <label :for="'weight' + _uid">Вес</label>
         </div>
         <div class="input-field col s12 m6">

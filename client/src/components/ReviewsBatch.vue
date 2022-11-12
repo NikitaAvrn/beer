@@ -39,7 +39,7 @@ export default {
     },
   },
   mounted() {
-    this.getReviewList(this.BATCH.id)
+    //this.getReviewList(this.BATCH.id)
   },
 }
 </script>

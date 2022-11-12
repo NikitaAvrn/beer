@@ -4,7 +4,7 @@
       <autocomplete-hop v-model="RECIPE_HOP.hop"></autocomplete-hop>
       <div class="row">
         <div class="input-field col s12 m6">
-          <input :id="'weight' + _uid" v-model.number="RECIPE_HOP.weight" step="0.01" type="number" class="validate" required />
+          <input :id="'weight' + _uid" v-model.number="RECIPE_HOP.weight" step="0.001" type="number" class="validate" required />
           <label :for="'weight' + _uid">Вес (гр.)</label>
         </div>
         <div class="input-field col s12 m6">

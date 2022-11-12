@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 //import config from '../../../config/default.json'
-import config from '../../../config/production.json'
+//import config from '../../../config/production.json'
 
 import list from './directory/list'
 import malt from './directory/malt'
@@ -40,6 +40,8 @@ export default new Vuex.Store({
   },
   actions: {
     async fetchMethod(context, {url, method, obj = null}) {
+      const config = await import(`../../../config/${process.env.NODE_ENV}.json`)
+        .then(r => r)
       try {
         let autorization = {} 
         if (context.getters.AUTH && context.getters.AUTH.token) {

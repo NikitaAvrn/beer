@@ -31,8 +31,8 @@ export default {
     headers: [
       { title: 'Тип паузы', name: 'name' },
       { title: 'Нагрев', name: 'heat' },
-      { title: 'Температура', name: 'temperature' },
-      { title: 'Продолжительность', name: 'time', foot: 'sum' },
+      { title: 'Температура (°C)', name: 'temperature' },
+      { title: 'Продолжительность (мин.)', name: 'time', foot: 'sum' },
     ],
   }),
   methods: {
