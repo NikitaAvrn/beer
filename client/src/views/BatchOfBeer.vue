@@ -70,7 +70,7 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="comment" v-model="BATCH.comment" class="materialize-textarea"></textarea>
+              <textarea id="comment" v-model="BATCH.comment" class="materialize-textarea" ref="comment"></textarea>
               <label for="comment">Дополнительная информация</label>
             </div>
           </div>
@@ -131,6 +131,7 @@ export default {
   mixins: [validate],
   async mounted() {
     this.tabs = M.Tabs.init(this.$refs.tabs, {})
+    //M.textareaAutoResize(this.$refs.comment)
 
     if (this.$route.params.id) {
       await this.getBatchOfBeerById(this.$route.params.id)
@@ -142,6 +143,7 @@ export default {
   name: 'Beer',
   updated() {
     this.updateTextFields()
+    M.textareaAutoResize(this.$refs.comment)
   },
 }
 </script>

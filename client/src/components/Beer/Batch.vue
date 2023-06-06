@@ -19,7 +19,7 @@
           Солод: {{ BATCH.malt }} <br />
           Праймер: {{ BATCH.primer }}
         </p>
-        <p>Дополнительная информация: {{ BATCH.comment }}</p>
+        <p v-if="BATCH.comment">Дополнительная информация: {{ BATCH.comment }}</p>
       </blockquote>
     </div>
   </div>

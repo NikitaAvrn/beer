@@ -11,7 +11,7 @@
       </button>
     </div>
     <div class="col s12" v-if="headers">
-      <table class="striped centered highlight responsive-table">
+      <table class="striped centered highlight">
         <thead>
           <tr>
             <th>#</th>
@@ -186,6 +186,11 @@ export default {
 </script>
 
 <style scoped>
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 th {
   cursor: pointer;
 }

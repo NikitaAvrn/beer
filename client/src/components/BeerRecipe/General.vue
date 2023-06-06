@@ -41,7 +41,7 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="description" v-model.trim="RECIPE.description" class="materialize-textarea"></textarea>
+          <textarea id="description" v-model.trim="RECIPE.description" class="materialize-textarea" ref="description"></textarea>
           <label for="description">Дополнительная информация</label>
         </div>
       </div>
@@ -99,6 +99,9 @@ export default {
         }
       }
     },
+  },
+  updated() {
+    M.textareaAutoResize(this.$refs.description)
   },
 }
 </script>
