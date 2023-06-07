@@ -1,11 +1,11 @@
 <template>
   <div class="row">
-    <div class="input-field col s6 mb0">
+    <div class="input-field col s8 mb0">
       <i class="fa fa-search prefix"></i>
       <input type="text" id="search" v-model.trim="search" :class="{ 'grey-text': search.length < 3 }" />
       <label for="search">Поиск</label>
     </div>
-    <div class="col s6">
+    <div class="col s4">
       <button class="btn-small mt1 right white black-text waves-effect" @click="addBtnClick">
         <i class="fa fa-plus"></i><span class="hide-on-small-only ml1">Добавить</span>
       </button>
@@ -186,10 +186,12 @@ export default {
 </script>
 
 <style scoped>
-table {
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
+@media only screen and (max-width: 992px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    /* white-space: nowrap; */
+  }
 }
 th {
   cursor: pointer;

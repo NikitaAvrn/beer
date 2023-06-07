@@ -28,12 +28,6 @@
           <label for="message">Сообщение</label>
         </div>
       </div>
-      <!-- 
-      <div class="center">
-        <button class="btn waves-effect white black-text mt1 mb1" type="button" @click="sendReview"><i class="fa fa-paper-plane left"></i>Отправить</button>
-        <button class="btn waves-effect white black-text mt1 mb1" type="button" @click="clearReview"><i class="fa fa-eraser left"></i>Очистить</button>
-      </div>
-       -->
     </form>
   </div>
 </template>
@@ -47,7 +41,7 @@ export default {
     ...mapGetters(['REVIEW', 'REVIEW_LIST']),
   },
   data: () => ({
-    maxLength: 512,
+    maxLength: 1024,
   }),
   mixins: [validate],
   methods: {
