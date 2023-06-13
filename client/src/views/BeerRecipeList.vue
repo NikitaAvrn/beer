@@ -5,16 +5,47 @@
         <h2>Рецепты пива <small>Список</small></h2>
       </div>
     </div>
-    <table-find :headers="headers" :data="RECIPE_LIST" @add-btn-click="addBtnClick" @table-btn-click="tableBtnClick"></table-find>
+    <table-component
+      :counter="true"
+      :finder="true"
+      :headers="headers"
+      :rows-data="RECIPE_LIST"
+      :min-length-find="1"
+      :pages="true"
+      :rows-on-page-list="[10, 25, 50, 75, 100]"
+      :start-rows-on-page="50"
+      :row-buttons="[
+        {
+          result: 'edit',
+          icon: 'edit',
+          class: 'btn-small waves-effect white black-text z-depth-0',
+        },
+        {
+          result: 'delete',
+          icon: 'trash',
+          class: 'btn-small waves-effect white black-text z-depth-0',
+        },
+      ]"
+      :table-buttons="[
+        {
+          title: 'Добавить',
+          icon: 'plus',
+          class: 'btn-small waves-effect',
+          result: 'add',
+        },
+      ]"
+      @table-btn-click="tableBtnClick"
+      @row-btn-click="rowBtnClick"
+    />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import TableFind from '../components/TableFind.vue'
+import TableComponent from '../components/TableComponent.vue'
 
 export default {
-  components: { TableFind },
+  components: { TableComponent },
   computed: {
     ...mapGetters(['RECIPE_LIST']),
   },
@@ -30,15 +61,19 @@ export default {
   }),
   methods: {
     ...mapActions(['getBeerRecipeList', 'deleteBeerRecipeById']),
-    addBtnClick() {
-      this.$router.push('/beer-recipe')
-    },
     tableBtnClick(e) {
+      switch (e.button) {
+        case 'add':
+          this.$router.push('/beer-recipe')
+          break
+      }
+    },
+    rowBtnClick(e) {
       if (e.button === 'edit') {
         this.$router.push(`/beer-recipe/${e.data.id}`)
       }
 
-      if (e.button === 'delete') {
+      if (e.button === 'delete' && confirm('Вы действительно хотите удалить рецепт?')) {
         this.deleteBeerRecipeById(e.data.id)
       }
     },
