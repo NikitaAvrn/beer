@@ -4,7 +4,8 @@
       <h4>
         {{ title }}
         <span class="right"
-          ><button class="btn white black-text waves-effect modal-close" type="button"><i class="fa fa-times"></i></button
+          ><button class="btn grey lighten-5 black-text waves-effect z-depth-0 modal-close" type="button">
+            <i class="fa fa-times"></i></button
         ></span>
       </h4>
       <div class="body-modal">
@@ -12,8 +13,12 @@
       </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" @click="ok" class="waves-effect waves-green btn-flat"><i class="left fa fa-save"></i>Сохранить</a>
-      <a href="#!" @click="cancel" class="waves-effect waves-red btn-flat"><i class="left fa fa-xmark"></i>Отменить</a>
+      <a href="#!" @click="ok" class="waves-effect waves-green btn-flat"
+        ><i class="left fa fa-save"></i>Сохранить</a
+      >
+      <a href="#!" @click="cancel" class="waves-effect waves-red btn-flat"
+        ><i class="left fa fa-xmark"></i>Отменить</a
+      >
     </div>
   </div>
 </template>

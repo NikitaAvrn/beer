@@ -7,7 +7,8 @@
         :class="tb.class"
         @click.prevent="tableBtnClick(tb.result)"
       >
-        <i class="fa left" :class="'fa-' + tb.icon"></i><span class="hide-on-small-only">{{ tb.title }}</span>
+        <i class="fa" :class="'fa-' + tb.icon + ' ' + tb.iconClass" v-if="tb.icon"></i
+        ><span class="hide-on-small-only">{{ tb.title }}</span>
       </a>
     </div>
     <div class="input-field col s12 m6" v-if="finder">
@@ -44,7 +45,7 @@
       <select v-model="rowsOnPage" @change="activePage = 1" ref="rowsOnPage">
         <option v-for="rp in rowsOnPageList" :key="rp" :value="rp">{{ rp }}</option>
       </select>
-      <label>Строк в таблице</label>
+      <label>Строки</label>
     </div>
     <div class="col s12" v-if="headers">
       <table class="striped centered highlight">
@@ -88,18 +89,25 @@
               >
               <span v-else>{{ row[col.name] }}</span>
             </td>
-            <td class="valign-wrapper right" v-if="rowButtons">
-              <a
-                v-for="rb in rowButtons"
-                :key="rb.result"
-                :class="rb.class"
-                @click.prevent="
-                  $emit('row-btn-click', { data: row, button: rb.result, index: inx, checked: checkRows[inx] })
-                "
-              >
-                <i class="fa" :class="'fa-' + rb.icon"></i>
-                <span class="hide-on-small-only">{{ rb.title }}</span>
-              </a>
+            <td v-if="rowButtons">
+              <div class="valign-wrapper right">
+                <a
+                  v-for="rb in rowButtons"
+                  :key="rb.result"
+                  :class="rb.class"
+                  @click.prevent="
+                    $emit('row-btn-click', {
+                      data: row,
+                      button: rb.result,
+                      index: inx,
+                      checked: checkRows[inx],
+                    })
+                  "
+                >
+                  <i class="fa" :class="'fa-' + rb.icon + ' ' + rb.iconClass" v-if="rb.icon"></i>
+                  <span class="hide-on-small-only">{{ rb.title }}</span>
+                </a>
+              </div>
             </td>
           </tr>
         </tbody>

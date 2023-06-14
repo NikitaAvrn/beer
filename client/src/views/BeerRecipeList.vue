@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col s12">
-        <h2>Рецепты пива <small>Список</small></h2>
+        <h4>Рецепты пива <small class="grey-text">Список</small></h4>
       </div>
     </div>
     <table-component
@@ -30,6 +30,7 @@
         {
           title: 'Добавить',
           icon: 'plus',
+          iconClass: 'left',
           class: 'btn-small waves-effect',
           result: 'add',
         },

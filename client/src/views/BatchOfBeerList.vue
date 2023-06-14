@@ -2,10 +2,9 @@
   <div>
     <div class="row">
       <div class="col s12">
-        <h2>Партии пива <small>Список</small></h2>
+        <h4>Партии пива <small class="grey-text">Список</small></h4>
       </div>
     </div>
-    <!-- <table-find :headers="headers" :data="batchList" @add-btn-click="addBtnClick" @table-btn-click="tableBtnClick"></table-find> -->
     <table-component
       :counter="true"
       :finder="true"
@@ -31,6 +30,7 @@
         {
           title: 'Добавить',
           icon: 'plus',
+          iconClass: 'left',
           class: 'btn-small waves-effect',
           result: 'add',
         },
@@ -66,7 +66,7 @@ export default {
   },
   data: () => ({
     headers: [
-      { title: 'Рецепт', name: 'titleRecipe' },
+      { title: 'Рецепт', name: 'titleRecipe', filter: 'titleRecipe' },
       { title: 'Варка', name: 'dateStartTitle', sort: 'dateStart', type: 'date' },
       { title: 'Розлив', name: 'dateBottlingTitle', sort: 'dateBottling', type: 'date' },
       { title: 'Готовность', name: 'dateReadyTitle', sort: 'dateReady', type: 'date' },
